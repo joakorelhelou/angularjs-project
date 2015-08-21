@@ -3,11 +3,12 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Students Book</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
 	</head>
 	<body ng-controller="StudentsController"> <!--Defines DOM session of the scope of this controlleṛ-->
 		<h1>Students Book</h1>
-		<div>
-		<div ng-repeat="student in students"> <!-- Built in directive to show a list of items-->
+		<div class="wrapper">
+		<div class="contact-item" ng-repeat="student in students"> <!-- Built in directive to show a list of items-->
 			<div>{{student.name}} - {{student.phone}}</div>
 			<span>{{student.class}}</span>
 			</div>
