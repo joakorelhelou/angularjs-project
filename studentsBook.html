@@ -14,7 +14,9 @@
 			</div>
 		</div>
 
-	<div class="wrapper">
+	<br/>
+	<center><button ng-click="ShowForm()" ng-hide="formVisibility">Add Contact</button>
+	<div ng-show="formVisibility" class="wrapper">
 		<h2>Add a contact</h2>
 		Name : <input type="text" ng-model="newStudent.name"></input>
 		Phone : <input type="text" ng-model="newStudent.phone"></input>

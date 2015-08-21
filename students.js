@@ -11,6 +11,15 @@ studentsBookApp.controller("StudentsController", function StudentsController($sc
 
 	$scope.Save=function(){
 		$scope.students.push({name:$scope.newStudent.name, phone:$scope.newStudent.phone, class:$scope.newStudent.class});
+		$scope.formVisibility=false;
+		console.log($scope.formVisibility);
+	}
+
+	$scope.formVisibility = false;
+
+	$scope.ShowForm=function(){
+		$scope.formVisibility=true;
+		console.log($scope.formVisibility);
 	}
 
 });
