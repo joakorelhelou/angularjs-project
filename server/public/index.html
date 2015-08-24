@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="studentsBookApp"> <!--initializes angularjs using our app -->
+	<head>
+		<meta charset="utf-8">
+		<title>Students Book</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+	<body ng-controller="StudentsController"> <!--Defines DOM session of the scope of this controlleṛ-->
+		<h1>Students Book</h1>
+		<div class="wrapper">
+		<div class="contact-item" ng-repeat="student in students | orderBy: 'name'"> <!-- Built in directive to show a list of items-->
+			<div class="name">{{student.name}} - {{student.phone}}</div>
+			<span class="class">{{student.class}}</span>
+			</div>
+		</div>
+
+	<br/>
+	<center><button ng-click="ShowForm()" ng-hide="formVisibility">Add Contact</button>
+	<div ng-show="formVisibility" class="wrapper">
+		<h2>Add a contact</h2>
+		Name : <input type="text" ng-model="newStudent.name"></input>
+		Phone : <input type="text" ng-model="newStudent.phone"></input>
+		Class : <input type="text" ng-model="newStudent.class"></input>
+		<button ng-click="Save()">Save</button>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js" type="text/javascript"></script>
+	<script src="students.js" type="text/javascript"></script>
+	</body>
+</html>
