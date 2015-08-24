@@ -14,11 +14,22 @@ module.exports = function(grunt){
 				src: 'united.js',
 				dest: 'build/united.min.js'
 			}
+		},
+		shell:{
+			multiple: {
+				command: [
+					'rm -rf united.js',
+					'rm -rf deploy',
+					'mkdir deploy',
+					'mv build/united.min.js deploy/united.min.js'
+				].join('&&')
+			}
 		}
 	});
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-
-	grunt.registerTask('default',['jshint', 'concat', 'uglify']);
+	grunt.loadNpmTasks('grunt-shell');
+	
+	grunt.registerTask('default',['jshint', 'concat', 'uglify','shell']);
 };
